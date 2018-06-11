@@ -1,0 +1,13 @@
+AUTHORS
+ChangeLog
+build
+*.egg-info
+*.log
+*.swp
+*.pyc
+*.tox
+*.eggs
+.stestr/*
+.coverage*
+!.coveragerc
+cover/
