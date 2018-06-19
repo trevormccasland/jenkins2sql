@@ -3,7 +3,7 @@ A client program used to store subunit test results into a sql database
 optionally tagged with jenkins build parameters
 
 ## jenkins
-1. setup jenkins, for dev you can use https://github.com/jenkinsci/docker
+1. setup jenkins, for dev you can use https://github.com/buulam/jenkins-docker-pip
 2. install the PostBuildScript plugin
 https://wiki.jenkins.io/display/JENKINS/PostBuildScript+Plugin with the jenkins
 Plugin Manager
