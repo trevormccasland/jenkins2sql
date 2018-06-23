@@ -1,6 +1,7 @@
 import ConfigParser
 
 from flask import Flask
+from flask import jsonify
 from flask import request
 import io
 import json
@@ -24,7 +25,7 @@ def get_metadata(json_data):
     return {'build_name':  url_parts[-3:-2],
             'artifacts': url,
             'host': url_parts[-5:-4],
-            'build_id':  url_parts[-3:-1]}
+            'build_id':  '-'.join(url_parts[-3:-1])}
 
 def requests_get(url, auth=None):
     try:
@@ -53,7 +54,7 @@ def create_run():
     except ValueError as err:
         return 'Failed getting build info... %s' % err
     try:
-        parameters = get_metadata(json_resp)
+        metadata = get_metadata(json_resp)
     except ValueError as err:
         return 'Looks like your test json data is bad: %s' % err
     try:
@@ -64,6 +65,7 @@ def create_run():
     shell.process_results(stream.get_results())
     shell.CONF.set_override('run_meta', metadata)
     shell.process_results(stream.get_results())
+    return jsonify(metadata)
 
     
 def main():
