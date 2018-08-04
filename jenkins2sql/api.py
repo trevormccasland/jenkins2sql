@@ -73,7 +73,7 @@ def create_run():
     set_metadata(url)
     stream = read_subunit.ReadSubunit(subunit_file)
     shell.process_results(stream.get_results())
-    return jsonify(metadata)
+    return "success for %s" % url
 
 
 def main():
