@@ -44,8 +44,9 @@ openstack-health install
 ^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
+  cd
   git clone https://github.com/openstack/openstack-health
-  cd openstack-health
+  cd ~/openstack-health
   pip install -r requirements.txt
   pip install -e .
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -60,5 +61,6 @@ openstack-health usage
 
 ::
 
-  openstack-health-api jenkins2sql/etc/openstack-health-api.conf
+  openstack-health-api ~/jenkins2sql/etc/openstack-health-api.conf
+  cd ~/openstack-health
   sudo gulp dev
