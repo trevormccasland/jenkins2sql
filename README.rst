@@ -1,3 +1,4 @@
+===========
 jenkins2sql
 ===========
 A framework to store subunit test results into a sql database tagged with
@@ -5,8 +6,11 @@ jenkins build parameters
 This project uses subunit2sql underneath to insert the subunit streams into
 mysql. https://github.com/openstack-infra/subunit2sql
 
-jenkins
--------
+developer setup
+===============
+
+jenkins container
+-----------------
 #. setup jenkins, for dev you can use the Dockerfile included in this repository. If you want to use the tools/docker scripts, tag the image as ``myjenkins``
 #. install the PostBuildScript_ plugin with the jenkins Plugin Manager.
 #. create a job that clones your repositories, creates subunit files from your
@@ -34,3 +38,27 @@ found at https://github.com/openstack/openstack-health
 
 .. _PostBuildScript: https://wiki.jenkins.io/display/JENKINS/PostBuildScript+Plugin
 .. _documentation: https://docs.openstack.org/subunit2sql/latest/reference/api.html
+.. _openstack-health: https://github.com/openstack/openstack-health
+
+openstack-health install
+^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+  git clone https://github.com/openstack/openstack-health
+  cd openstack-health
+  pip install -r requirements.txt
+  pip install -e .
+  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  sudo npm -g config set prefix /usr/local
+  sudo npm -g install npm
+  sudo npm -g install gulp
+  npm install
+
+openstack-health usage
+^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+  openstack-health-api openstack-health/etc/openstack-health.conf
+  sudo gulp dev
