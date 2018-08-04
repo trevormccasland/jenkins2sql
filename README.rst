@@ -32,5 +32,5 @@ frontend
 This project does not support a frontend but an example frontend can be
 found at https://github.com/openstack/openstack-health
 
-.. _PostBuilScript: https://wiki.jenkins.io/display/JENKINS/PostBuildScript+Plugin
+.. _PostBuildScript: https://wiki.jenkins.io/display/JENKINS/PostBuildScript+Plugin
 .. _documentation: https://docs.openstack.org/subunit2sql/latest/reference/api.html
