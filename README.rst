@@ -60,5 +60,5 @@ openstack-health usage
 
 ::
 
-  openstack-health-api openstack-health/etc/openstack-health.conf
+  openstack-health-api jenkins2sql/etc/openstack-health-api.conf
   sudo gulp dev
