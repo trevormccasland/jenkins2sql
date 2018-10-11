@@ -18,4 +18,4 @@ class APITestCase(testtools.TestCase):
         json_data = mock.Mock(text=json.dumps({'url': self.build_url}))
         self.addDetail('json-data', content.text_content(str(json_data.text)))
         url = api.get_url(json_data)
-        self.assertEqual(self.build_url, url + 'error')
+        self.assertEqual(self.build_url, url)
