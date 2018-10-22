@@ -1,4 +1,4 @@
-import ConfigParser
+import configparser
 
 from flask import Flask
 from flask import jsonify

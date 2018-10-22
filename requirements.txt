@@ -2,3 +2,4 @@ subunit2sql
 requests
 flask
 pymysql
+configparser
